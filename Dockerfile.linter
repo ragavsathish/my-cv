@@ -1,0 +1,17 @@
+FROM debian:buster-slim 
+LABEL maintainer "Sathish Narayanan <ragav.sathish@gmail.com>"
+
+# Required packages.
+RUN apt-get update 
+RUN DEBIAN_FRONTEND=noninteractive apt-get install -y  curl perl make cpanminus gcc && rm -rf /var/lib/apt/lists/*
+
+# CPAN Config
+RUN echo | cpan 
+RUN cpan -i Unicode::GCString
+
+# Fetch LatexIndent
+RUN curl -o latexindent.tar.gz -L  https://github.com/cmhughes/latexindent.pl/archive/V3.6.tar.gz
+RUN tar -xzf latexindent.tar.gz 
+RUN yes Y | ./latexindent.pl-3.6/helper-scripts/latexindent-module-installer.pl
+
+ENTRYPOINT ["./latexindent.pl-3.6/latexindent.pl"]

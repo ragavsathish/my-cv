@@ -1,6 +1,6 @@
 # My Latex resume
 
-[![Build Status](https://travis-ci.org/sowmyanarayanan1/resume.svg?branch=master)](https://travis-ci.org/sowmyanarayanan1/resume)
+[![Build Status](https://travis-ci.org/sowmyanarayanan1/resume.svg?branch=master)](https://travis-ci.org/ragavsathish/resume)
 
 Forked from (Github : cies)[https://github.com/cies/resume] and modified by Sathish Narayanan. 
 
